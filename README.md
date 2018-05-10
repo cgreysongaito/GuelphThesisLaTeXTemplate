@@ -2,9 +2,7 @@
 
 The University of Guelph Thesis Class is designed to format a LaTeX document
 according to the University of Guelph's thesis style guidelines, documented
-at [[1]](https://www.uoguelph.ca/graduatestudies/thesis/general-format) and
-[[2]](https://www.uoguelph.ca/graduatestudies/thesis/arrangement).  Since the
-thesis style guidelines are revised occasionally, you should review them and
+at [[1]](https://www.uoguelph.ca/graduatestudies/current-students/preparation-your-thesis).  Since the thesis style guidelines are revised occasionally, you should review them and
 make sure that your thesis conforms.  While this class will do its best to
 format the thesis in accordance with the guidelines as they were at the time
 that the class was written, nothing is perfect and neither the class or its
