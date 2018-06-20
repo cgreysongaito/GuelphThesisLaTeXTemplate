@@ -59,6 +59,14 @@
 %\appendix
 %\include{Appendix1}
 
+%%%%When you have one appendix section, the memoir class will print Appendix A and Appendix as two titles on a page. To stop this from happening (i.e have a single Appendix title) use the following code (instead of the two lines of appendix code above).
+%\setcounter{chapter}{1}
+%\renewcommand{\thechapter}{\Alph{chapter}}
+%\chapter*{Appendix}
+%\addcontentsline{toc}{chapter}{Appendix}
+%\addtocontents{lof}{\protect\addvspace{10pt}}
+%\setcounter{figure}{0}
+
 %% <style>: Common values are: IEEEtran (IEEE transactions format) and apalike
 %% (APA format)
 \bibliographystyle{<style>}
