@@ -188,17 +188,17 @@ The thesis class is developed and stored in a git repository.  In order to
 allow for maximum flexibility the repository contains three branches, which
 are organized as follows:
 
-#####`master`
+##### `master`
 
 Contains the most up-to-date production version of the thesis class along with
 the templates and this documentation.
 
-#####`style`
+##### `style`
 
 Contains the most up-to-date production version of the thesis class only.  This
 branch is intended to be used by anyone who is keeping their thesis in git and
 wishes to pull in a copy of the thesis class without the other components.
 
-#####`style-dev`
+##### `style-dev`
 
 Development of the thesis class is done here.
