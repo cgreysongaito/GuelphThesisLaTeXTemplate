@@ -26,8 +26,8 @@ required to build the thesis.  A few of the commands are optional and have been
 marked as such.
 
 This repository includes the Thesis style (ugthesis.cls), a template for the
-abstract (Abstract_template.tex) and a template for the thesis
-(Thesis_template.tex).  The two templates can be used as examples to help you
+abstract (Abstract.tex), acknowledgements (Acknowledgements.tex), statement of authorship (AuthorshipStatement.tex), a chapter (Chapter.tex),  and a template for the thesis
+(Thesis.tex).  The two templates can be used as examples to help you
 get started.
 
 # Options
