@@ -1,4 +1,4 @@
-#Introduction:
+# Introduction
 
 The University of Guelph Thesis Class is designed to format a LaTeX document
 according to the University of Guelph's thesis style guidelines, documented
@@ -30,7 +30,7 @@ abstract (Abstract_template.tex) and a template for the thesis
 (Thesis_template.tex).  The two templates can be used as examples to help you
 get started.
 
-#Options:
+# Options
 
 ######`draft`
 
@@ -89,9 +89,9 @@ Format the thesis on letter sized paper with 1" margins on the top bottom and
 right, and a 1.5" on the left (for binding).  This is the more traditional
 style, commonly used with word processors.
 
-#Commands:
+# Commands
 
-######`\advisor`
+###### `\advisor`
 
 The name of your advisor.  It appears above the abstract.  If you have multiple
 advisors then separate their names with a line break (`\\`).  For example:
@@ -100,67 +100,68 @@ advisors then separate their names with a line break (`\\`).  For example:
 \advisor{Dr. J. Advisor \\ Dr. K. Co-Advisor}
 ```
 
-######`\degree`
+###### `\degree`
 
 The name of your degree.  Usually this is either "Master of Science" or "Doctor
 of Philosophy."  It appears on the title page of your thesis.
 
-######`\degreeprogram`
+###### `\degreeprogram`
 
 The name of your degree program as specified in the graduate calendar.  For
 example "Computer Science."  It appears on the title page of your thesis and
 will be used in the PDF document properties if `\thesissubject` isn't set.
 
-######`\degreemonth`
+###### `\degreemonth`
 
 The full name of the month in which your thesis is published (i.e. "January").
 It appears on the title page.
 
-######`\degreeyear`
+###### `\degreeyear`
 
 The year in which your thesis is published (i.e. "2014").  It appears on the
 title page and above the abstract.
 
-######`\thesissubject`
+###### `\thesissubject`
 
 The subject of your thesis.  This appears in the PDF document properties.
 `\degreeprogram` is used if this is not set.  (Optional)
 
-######`\thesiskeywords`
+###### `\thesiskeywords`
 
 A list of keywords for your thesis.  Appears in the PDF document properties.
 The keywords property is only set if this options has been specified.
 (Optional)
 
-######`\listofalgorithms`
+###### `\listofalgorithms`
 
 Generate a list of algorithms to appear in the front matter of the thesis.
 This command replaces the algorithm package, which does not typeset the list of
 algorithms properly.  Note that if you are using typesetting algorithms in your
 thesis, then you will still need the appropriate algorthmic package.
 
-#Environments:
+# Environments
 
-######`abstract`
+###### `abstract`
 
 Typesets the abstract of the thesis on its own page with the header specified
 in the thesis style guidelines.
 
-######`acknowledgements`
+###### `acknowledgements`
 
 Typesets the acknowledgements on their own page with the appropriate header as
 specified in the thesis style guidelines.
 
-######`dedication`
+###### `dedication`
 
 Typesets the dedication horizontally and vertically centred on its own page.
 (Optional)
 
-#####'statement of authorship'
+##### `authorship`
 
 Typesets Statement of Authorship on a single page with the appropriate header as specified in the thesis style guidelines
 
-#Boxes
+# Boxes
+
 Boxes can be made in the thesis that span multiple pages and that are single spaced (used to help the reader understand important terms in the thesis). To add a box use:
 ```
 \begin{infobox}[<title of box>]
@@ -181,7 +182,7 @@ If you want a list of boxes, ensure the following line of code is immediately ab
 \addtocontents{lob}{\protect\addvspace{10pt}}
 ```
 
-#Git Repository:
+# Git Repository
 
 The thesis class is developed and stored in a git repository.  In order to
 allow for maximum flexibility the repository contains three branches, which

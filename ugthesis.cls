@@ -582,8 +582,6 @@ font=\normalsize,
 \renewcommand{\theinfobox}{\thechapter.\arabic{infobox}}
 \renewcommand{\printlobtitle}[1]{\centering \MakeUppercase{\textbf{#1}}}
 
-
-
 \let\OldListofboxes\listofboxes
 \renewcommand{\listofboxes}{%
 	\clearpage
