@@ -32,58 +32,58 @@ get started.
 
 # Options
 
-######`draft`
+##### `draft`
 
 Do not build hyper links, include graphics, and highlight over full boxes.
 Used by the underlying memoir class and other packages.
 
-######`final`
+##### `final`
 
 Hide all hyperlinks.  Option is also used by other packages
 
-######`10pt`
+##### `10pt`
 
 Typeset the body of the thesis using a 10 point font (default)
 
-######`11pt`
+##### `11pt`
 
 Typeset the body of the thesis using a 11 point font
 
-######`12pt`
+##### `12pt`
 
 Typeset the body of the thesis using a 12 point font
 
-######`boxlink`
+##### `boxlink`
 
 Draw coloured boxes around the hyperlinks (including citations and cross
 references) instead of colouring the text
 
-######`single`
+##### `single`
 
 Typeset the body text of the thesis single spaced (default)
 
-######`onehalf`
+##### `onehalf`
 
 Typeset the body text of the thesis with one and a half spacing
 
-######`double`
+##### `double`
 
 Typeset the body text of the thesis double spaced
 
-######`ebook`
+##### `ebook`
 
 Used by the underlying memoir class.  Format the thesis with a smaller page
 size suitable for reading on tablets and e-readers.  Single spacing and a 10pt
 font are strongly recommended with this option.  Also note that the maximum
 size for a diagram is:  100mm x 174mm.
 
-######`modern`
+##### `modern`
 
 Format the thesis on letter sized paper with LaTeX's default margins.  It works
 out to about 1.5" on all sides and is generally considered to be the easiest to
 read. (default)
 
-######`traditional`
+##### `traditional`
 
 Format the thesis on letter sized paper with 1" margins on the top bottom and
 right, and a 1.5" on the left (for binding).  This is the more traditional
@@ -91,7 +91,7 @@ style, commonly used with word processors.
 
 # Commands
 
-###### `\advisor`
+##### `\advisor`
 
 The name of your advisor.  It appears above the abstract.  If you have multiple
 advisors then separate their names with a line break (`\\`).  For example:
@@ -100,39 +100,39 @@ advisors then separate their names with a line break (`\\`).  For example:
 \advisor{Dr. J. Advisor \\ Dr. K. Co-Advisor}
 ```
 
-###### `\degree`
+##### `\degree`
 
 The name of your degree.  Usually this is either "Master of Science" or "Doctor
 of Philosophy."  It appears on the title page of your thesis.
 
-###### `\degreeprogram`
+##### `\degreeprogram`
 
 The name of your degree program as specified in the graduate calendar.  For
 example "Computer Science."  It appears on the title page of your thesis and
 will be used in the PDF document properties if `\thesissubject` isn't set.
 
-###### `\degreemonth`
+##### `\degreemonth`
 
 The full name of the month in which your thesis is published (i.e. "January").
 It appears on the title page.
 
-###### `\degreeyear`
+##### `\degreeyear`
 
 The year in which your thesis is published (i.e. "2014").  It appears on the
 title page and above the abstract.
 
-###### `\thesissubject`
+##### `\thesissubject`
 
 The subject of your thesis.  This appears in the PDF document properties.
 `\degreeprogram` is used if this is not set.  (Optional)
 
-###### `\thesiskeywords`
+##### `\thesiskeywords`
 
 A list of keywords for your thesis.  Appears in the PDF document properties.
 The keywords property is only set if this options has been specified.
 (Optional)
 
-###### `\listofalgorithms`
+##### `\listofalgorithms`
 
 Generate a list of algorithms to appear in the front matter of the thesis.
 This command replaces the algorithm package, which does not typeset the list of
@@ -141,17 +141,17 @@ thesis, then you will still need the appropriate algorthmic package.
 
 # Environments
 
-###### `abstract`
+##### `abstract`
 
 Typesets the abstract of the thesis on its own page with the header specified
 in the thesis style guidelines.
 
-###### `acknowledgements`
+##### `acknowledgements`
 
 Typesets the acknowledgements on their own page with the appropriate header as
 specified in the thesis style guidelines.
 
-###### `dedication`
+##### `dedication`
 
 Typesets the dedication horizontally and vertically centred on its own page.
 (Optional)
@@ -177,7 +177,7 @@ To enable boxes for the whole thesis, ensure that the following code is in the p
 \DisemulatePackage{setspace}
 \usepackage{setspace}
 ```
-If you want a list of boxes, ensure the following line of code is immediately above the `include{Chapter}` code in the main Thesis.tex script:
+To properly format the List of Boxes, ensure the following line of code is immediately above the `include{Chapter}` code in the main Thesis.tex script:
 ```
 \addtocontents{lob}{\protect\addvspace{10pt}}
 ```
@@ -188,17 +188,17 @@ The thesis class is developed and stored in a git repository.  In order to
 allow for maximum flexibility the repository contains three branches, which
 are organized as follows:
 
-######`master`
+#####`master`
 
 Contains the most up-to-date production version of the thesis class along with
 the templates and this documentation.
 
-######`style`
+#####`style`
 
 Contains the most up-to-date production version of the thesis class only.  This
 branch is intended to be used by anyone who is keeping their thesis in git and
 wishes to pull in a copy of the thesis class without the other components.
 
-######`style-dev`
+#####`style-dev`
 
 Development of the thesis class is done here.
