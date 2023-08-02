@@ -115,7 +115,7 @@
 \LoadClass[oneside]{memoir}
 
 \RequirePackage[hyphens, obeyspaces, spaces]{url}
-\RequirePackage{hyperref}
+\RequirePackage[linktoc=all]{hyperref}
 
 %%
 %% Commands defined by this class.  They should all occur in the preamble.  
@@ -334,7 +334,7 @@
 \let\OldTableofcontents\tableofcontents
 \renewcommand{\tableofcontents}{%
 	\clearpage
-	\OldTableofcontents*
+	\OldTableofcontents
 }
 
 \let\OldListoftables\listoftables
@@ -402,42 +402,27 @@
 %%
 
 \renewenvironment{abstract}{
+	\phantomsection\addcontentsline{toc}{chapter}{Abstract}
 	\thispagestyle{empty}
 	\begin{SingleSpace}
 		\begin{center}
-			\abstractname \\
+			\textbf{\abstractname} \\
 			\vspace{36bp}
-			\textbf{\MakeUppercase{\@title}} \\
+			\MakeUppercase{\@title} \\
 			\vspace{36bp}
 		\end{center}
-		\begin{minipage}[t]{0.7\textwidth}
-			\textbf{\@author} \\
-			\textbf{University of Guelph, \@degreeyear} \\
+		\begin{minipage}[t]{0.68\textwidth}
+			\@author \\
+			University of Guelph, \@degreeyear \\
 		\end{minipage}
-		\begin{minipage}[t]{0.29\textwidth}
-			\textbf{Advisor:} \\
-			\textbf{\@advisor} \\
+		\begin{minipage}[t]{0.31\textwidth}
+			Advisors: \\
+			\@advisor \\
 		\end{minipage}
-
 		\vspace{36bp}
 	\end{SingleSpace}
-}{\newpage}
 
-%%
-%% Acknowledgements environment.  The memoir class doesn't provide an 
-%% acknowledgements environment, so one is added here.  It typesets the word
-%% ``Acknowledgements'' in bold at the top centre of the page followed by 
-%% three blank lines, and the content of the environment.
-%%
-
-\newenvironment{acknowledgements}{
-	\begin{center}
-		{\textbf{\acknowledgename}}\par
-	\end{center}
-	\vspace{36bp}
-}
-{\newpage}
-
+}{\clearpage}
 
 %%
 %% Dedication Environment.  The memoir class doesn't provide a dedication 
@@ -456,6 +441,37 @@
 	\end{center}%
 	\vspace{\stretch{1}}%
 }
+
+%%
+%% Acknowledgements environment.  The memoir class doesn't provide an 
+%% acknowledgements environment, so one is added here.  It typesets the word
+%% ``Acknowledgements'' in bold at the top centre of the page followed by 
+%% three blank lines, and the content of the environment.
+%%
+
+\newenvironment{acknowledgements}{
+	\phantomsection\addcontentsline{toc}{chapter}{Acknowledgements}
+	\begin{center}
+		{\MakeUppercase{\textbf{\acknowledgename}}}\par
+	\end{center}
+	\vspace{36bp}
+}
+{\clearpage}
+
+%%
+%% Statement of Authorship environment. This sets up a Authorship Statement environment in the same style as the Acknowledgements environment. A Statement of Authorship is required if the thesis is in publication style.
+%%
+
+\newcommand\authorshipname{Statement of Authorship}
+\newenvironment{authorship}{
+	\phantomsection\addcontentsline{toc}{chapter}{Statement of Authorship}
+	\begin{center}
+		{\MakeUppercase{\textbf{\authorshipname}}}\par
+	\end{center}
+	\vspace{36bp}
+}
+{\clearpage}
+
 
 %%
 %% The University of Guelph Thesis requirements specify the title page for a
@@ -515,4 +531,61 @@
 		\end{center}
 	\end{SingleSpace}
 \endgroup
+}
+
+%Formatting of Table of Contents, List of Figures, List of Tables
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\printtoctitle}[1]{\centering \MakeUppercase{\textbf{#1}}}
+\renewcommand{\printlottitle}[1]{\centering \MakeUppercase{\textbf{#1}}}
+\renewcommand{\printloftitle}[1]{\centering \MakeUppercase{\textbf{#1}}}
+	
+\newlength{\mylen}
+
+\renewcommand\cftchaptername{\chaptername~}
+\renewcommand\cftchapteraftersnum{:}
+\settowidth\mylen{\cftchapterpresnum\cftchapteraftersnum\quad}
+\addtolength\cftchapternumwidth{\mylen}
+	
+\renewcommand{\cfttablepresnum}{\tablename\enspace}
+\renewcommand{\cfttableaftersnum}{:}
+\settowidth{\mylen}{\cfttablepresnum\cfttableaftersnum}
+\addtolength{\cfttablenumwidth}{\mylen}
+	
+\renewcommand{\cftfigurepresnum}{\figurename\enspace}
+\renewcommand{\cftfigureaftersnum}{:}
+\settowidth{\mylen}{\cftfigurepresnum\cftfigureaftersnum}
+\addtolength{\cftfigurenumwidth}{\mylen}
+
+\renewcommand{\cftchapterleader}{\cftdotfill{\cftdotsep}}
+
+%
+%Boxes. The following code creates boxes that can span multiple pages. Used when you have boxes of text to help the reader with important concepts and terminology. The code will also set up a List of Boxes which you can add to the front matter.
+\newenvironment{infobox}[1][]{
+\refstepcounter{infobox}
+\begin{mdframed}[
+frametitle={Box \theinfobox\ #1},
+skipabove=\baselineskip plus 2pt minus 1pt,
+skipbelow=\baselineskip plus 2pt minus 1pt,
+linewidth=0.5pt,
+frametitlerule=true,
+repeatframetitle=true,
+font=\normalsize,
+]
+\singlespacing
+\addcontentsline{lob}{infobox}{Box\space\theinfobox:\hspace{0.5cm}#1}%
+}{
+\end{mdframed}
+}
+\newcommand\listboxname{List of Boxes}
+\newlistof{listofboxes}{lob}{\listboxname}
+\newlistentry[chapter]{infobox}{lob}{0}
+\renewcommand{\theinfobox}{\thechapter.\arabic{infobox}}
+\renewcommand{\printlobtitle}[1]{\centering \MakeUppercase{\textbf{#1}}}
+
+
+
+\let\OldListofboxes\listofboxes
+\renewcommand{\listofboxes}{%
+	\clearpage
+	\OldListofboxes
 }

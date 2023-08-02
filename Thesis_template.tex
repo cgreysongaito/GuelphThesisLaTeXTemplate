@@ -34,6 +34,15 @@
 %\thesissubject{<subject>}
 %\thesiskeywords{<keywords>}
 
+%Referencing
+%Change options to set reference style (e.g. citestyle=ele, bibstyle=ele)
+%Change options to set the backend and encoding (e.g. backend=biber, bibencoding=utf8)
+\usepackage[<options>]{biblatex}
+\addbibresource{<library.bib>}
+\newcommand\posscite[1]{\citeauthor{#1}'s (\citeyear{#1})} %Allows the use of possessive in sentence citations
+
+\setmainfont{Times New Roman}
+
 %\usepackage{graphicx}
 %\usepackage{<additional packages>}
 
@@ -44,10 +53,11 @@
 \include{Abstract}
 %\include{Dedication}
 \include{Acknowledgements}
-
 \tableofcontents
 %\listoftables
+%listofboxes
 %\listoffigures
+\include{AuthorshipStatement}
 
 \mainmatter
 %\include{Chapter1}
@@ -67,9 +77,9 @@
 %\addtocontents{lof}{\protect\addvspace{10pt}}
 %\setcounter{figure}{0}
 
-%% <style>: Common values are: IEEEtran (IEEE transactions format) and apalike
-%% (APA format)
-\bibliographystyle{<style>}
-\bibliography{<Bibtex file name without extension>}
+%If you want a single bibliography at the end of the whole thesis use the code below.
+\begin{refcontext}[sorting=nyt]
+\printbibliography
+\end{refcontext}
 
 \end{document}

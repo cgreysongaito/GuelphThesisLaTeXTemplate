@@ -156,6 +156,31 @@ specified in the thesis style guidelines.
 Typesets the dedication horizontally and vertically centred on its own page.
 (Optional)
 
+#####'statement of authorship'
+
+Typesets Statement of Authorship on a single page with the appropriate header as specified in the thesis style guidelines
+
+#Boxes
+Boxes can be made in the thesis that span multiple pages and that are single spaced (used to help the reader understand important terms in the thesis). To add a box use:
+```
+\begin{infobox}[<title of box>]
+\label{boxlabel}
+text of box
+\end{infobox}
+```
+To enable boxes for the whole thesis, ensure that the following code is in the preamble of the main Thesis.tex script:
+
+```
+\usepackage[]{mdframed}
+\let\newfloat\undefined
+\DisemulatePackage{setspace}
+\usepackage{setspace}
+```
+If you want a list of boxes, ensure the following line of code is immediately above the `include{Chapter}` code in the main Thesis.tex script:
+```
+\addtocontents{lob}{\protect\addvspace{10pt}}
+```
+
 #Git Repository:
 
 The thesis class is developed and stored in a git repository.  In order to
