@@ -403,7 +403,7 @@
 
 \renewenvironment{abstract}{
 	\phantomsection\addcontentsline{toc}{chapter}{Abstract}
-	\thispagestyle{empty}
+	\pagestyle{empty}
 	\begin{SingleSpace}
 		\begin{center}
 			\textbf{\abstractname} \\
